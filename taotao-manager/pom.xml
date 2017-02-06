@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>taotao-parent</artifactId>
+        <groupId>com.taotao</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>taotao-manager</artifactId>
+    <!-- taotao-manager是后台管理工程, 属于web工程(war) -->
+    <!-- 但是我们希望工程中用到的mybatis中的pojo/mapper希望被其他模块使用, 最终采用聚合工程 -->
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- pojo/mapper/service为jar工程, web为war工程-->
+        <!-- web依赖于service, service依赖于mapper, mapper依赖于pojo, pojo不依赖于外部模块  -->
+        <module>taotao-manager-pojo</module>
+        <module>taotao-manager-mapper</module>
+        <module>taotao-manager-service</module>
+        <module>taotao-manager-web</module>
+    </modules>
+
+    <!-- 本模块依赖taotao-common当中的工具类 -->
+    <dependencies>
+        <dependency>
+            <groupId>com.taotao</groupId>
+            <artifactId>taotao-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- 配置插件 -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <port>8080</port>
+                    <path>/</path>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
