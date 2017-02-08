@@ -7,16 +7,22 @@
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.taotao.controller"/>
+    <!-- SpringMVC配置文件比Spring配置文件多一个xmlns:mvc -->
 
-    <mvc:annotation-driven />
+    <!-- 扫描Controller -->
+    <context:component-scan base-package="com.taotao.controller"/>
+    
+    <!-- 注解驱动, 代替"处理器映射器"和"处理器适配器" -->
+    <mvc:annotation-driven/>
+
+    <!-- 视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
 
-    <!-- 资源映射 -->
+    <!-- 资源映射, 因为url-pattern被设置为"/", 会拦截包括静态资源在内的所有请求 -->
     <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
     <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 

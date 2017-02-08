@@ -4,14 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <!--配置分页插件
+    <!-- 配置分页插件 -->
+    <!-- 设置数据库类型 oracle,mysql,mariadb,sqLite,HsqlDB,PostgreSQL六种数据库 -->
     <plugins>
         <plugin interceptor="com.github.pagehelper.PageHelper">
             <property name="dialect" value="mysql"/>
         </plugin>
     </plugins>
-    -->
 
-    <!--设置数据库类型 oracle,mysql,mariadb,sqLite,HsqlDB,PostgreSQL六种数据库-->
 
 </configuration>
