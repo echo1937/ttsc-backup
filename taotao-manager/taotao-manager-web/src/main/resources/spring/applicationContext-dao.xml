@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
-    <!-- 加载properties文件 -->
-    <context:property-placeholder location="classpath:resource/db.properties"/>
-    <context:property-placeholder location="classpath:resource/resource.properties"/>
+    <!-- 加载properties文件, 注意此处只能定义一行context:property! 多则无效 -->
+    <!-- context:property-placeholder location="classpath:resource/db.properties"/ -->
+    <context:property-placeholder location="classpath:resource/*.properties"/>
 
     <!-- 数据库连接池 -->
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
