@@ -66,7 +66,8 @@ public class HttpClientTest {
     public void doPost() throws Exception {
         CloseableHttpClient httpClient = HttpClients.createDefault();
         // 创建一个POST对象
-        HttpPost post = new HttpPost("http://localhost:8082/httpclient/post.html");
+        // 如果请求的url后缀是html是不能响应json数据的, 需要修改后缀名.
+        HttpPost post = new HttpPost("http://localhost:8082/httpclient/post.action");
         // 执行POST请求
         CloseableHttpResponse response = httpClient.execute(post);
         String string = EntityUtils.toString(response.getEntity());
@@ -80,10 +81,10 @@ public class HttpClientTest {
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
         //创建一个post对象
-        HttpPost post = new HttpPost("http://localhost:8082/httpclient/post.html");
+        HttpPost post = new HttpPost("http://localhost:8082/httpclient/post1.action");
         //创建一个Entity。模拟一个表单
         List<NameValuePair> kvList = new ArrayList<>();
-        kvList.add(new BasicNameValuePair("username", "zhangsan"));
+        kvList.add(new BasicNameValuePair("username", "张三"));
         kvList.add(new BasicNameValuePair("password", "123"));
 
         //包装成一个Entity对象
