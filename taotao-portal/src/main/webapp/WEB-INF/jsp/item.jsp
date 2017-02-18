@@ -221,7 +221,7 @@
 					<b></b>如果您发现商品信息不准确，欢迎纠错
 				</div>
 				<div id="item-desc" class="detail-content">
-						${itemDesc.itemDesc }
+						<!-- 商品描述 -->
 				</div>
 			</div>
 			<div class="mc hide" data-widget="tab-content" id="product-detail-2">
@@ -278,6 +278,7 @@
 				//如果没有查询过规格参数，就做请求
 				if (!itemControl.haveParam) {
 					$.get(itemControl.param.paramUrl+itemId+".html", function(data){
+
 						//返回商品规格的html，直接显示到页面
 						$("#product-detail-2").append(data);
 						//更改flag状态
