@@ -35,7 +35,7 @@
         <constructor-arg name="poolConfig" ref="jedisPoolConfig"></constructor-arg>
     </bean>
     <!-- DAO的bean -->
-    <bean id="jedisClient" class="com.taotao.rest.JedisClientSingle"></bean>
+    <bean id="jedisClient" class="com.taotao.rest.dao.impl.JedisClientSingle"></bean>
 
     <!-- jedis集群版配置 -->
     <!--
