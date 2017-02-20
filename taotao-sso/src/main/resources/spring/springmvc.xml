@@ -20,9 +20,12 @@
         <property name="prefix" value="/WEB-INF/jsp/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    <!-- 资源映射, 因为url-pattern被设置为"/", 会拦截包括静态资源在内的所有请求 -->
+    <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+    <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
+    <mvc:resources location="/WEB-INF/images/" mapping="/images/**"/>
 
-
-    <!-- 资源映射, 因为url-pattern被设置为"/rest/*", 不会拦截静态资源的请求 -->
 
 
 </beans>
