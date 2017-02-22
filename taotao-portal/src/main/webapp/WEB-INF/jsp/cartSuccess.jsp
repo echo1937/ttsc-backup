@@ -53,7 +53,7 @@
                         <div>
                             <a class="btn-tobback" href="https://item.jd.com/2103509.html" target="_blank"
                                clstag="pageclick|keycount|201601152|3">查看商品详情</a>
-                            <a class="btn-addtocart" href="https://cart.jd.com/cart.action?r=0.250885359070806"
+                            <a class="btn-addtocart" href="http://localhost:8082/cart/cart.html"
                                id="GotoShoppingCart" clstag="pageclick|keycount|201601152|4"><b></b>去购物车结算</a>
                         </div>
                     </div>
