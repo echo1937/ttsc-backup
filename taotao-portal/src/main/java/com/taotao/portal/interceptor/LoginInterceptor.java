@@ -45,8 +45,10 @@ public class LoginInterceptor implements HandlerInterceptor {
             false：不执行。
 
          */
-        
+
         //取到用户信息，放行
+        //把用户信息放入Request
+        request.setAttribute("user", user);
         return true;
     }
 
