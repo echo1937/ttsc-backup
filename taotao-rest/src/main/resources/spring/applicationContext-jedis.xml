@@ -29,7 +29,7 @@
 
     <!-- jedis客户端单机版 -->
     <bean id="redisClient" class="redis.clients.jedis.JedisPool">
-        <constructor-arg name="host" value="ttsc-redis"></constructor-arg>
+        <constructor-arg name="host" value="redis.taotao.com"></constructor-arg>
         <constructor-arg name="port" value="6379"></constructor-arg>
         <!-- 该参数可以不配置, jedis有默认设置 -->
         <constructor-arg name="poolConfig" ref="jedisPoolConfig"></constructor-arg>
