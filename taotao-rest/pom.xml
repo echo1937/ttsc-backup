@@ -13,7 +13,7 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <!-- 
+        <!--
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -72,9 +72,9 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <configuration>
-                    <port>8080</port>
+                    <port>8081</port>
                     <path>/</path>
-                    <url>http://172.28.128.7:8080/manager/text</url>
+                    
                     <username>tomcat</username>
                     <password>tomcat</password>
                 </configuration>
